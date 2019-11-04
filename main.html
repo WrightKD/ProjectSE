@@ -43,6 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
             $('#exampleModalLabel').html(info.event.title);
             $('#mbody').html(info.event.extendedProps.description);
+            $('#mbody2').html(info.event.extendedProps.venue)
             
             $('#eventModal').modal();
         },
@@ -468,6 +469,7 @@ document.addEventListener('DOMContentLoaded', function() {
             </button>
           </div>
           <div class="modal-body" id="mbody"></div>
+          <div class="modal-body" id="mbody2"></div>
           <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
             
