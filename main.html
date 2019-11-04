@@ -35,12 +35,149 @@ document.addEventListener('DOMContentLoaded', function() {
         center: 'title',
         right: 'dayGridMonth,dayGridWeek,dayGridDay'
       },
-      defaultDate: '2019-08-12',
+      height: 750,
+      
+      eventClick:  function(info) {
+
+        
+
+            $('#exampleModalLabel').html(info.event.title);
+            $('#mbody').html(info.event.extendedProps.description);
+            
+            $('#eventModal').modal();
+        },
+      defaultDate: new Date(),
       navLinks: true, // can click day/week names to navigate views
       editable: true,
       eventLimit: true, // allow "more" link when too many events
-      events: ''
+      events:  [
+				{
+          title: 'CSIS3724',
+          startTime: '09:10:00',
+          endTime: '10:00:00',
+          daysOfWeek: [ '1' ],
+          color: '#FFAC33',
+          textColor:'#000000',
+          backgroundColor: '#FFAC33',
+          description: 'Software Engineering',
+          venue: 'Biology 2'
+				},
+        {
+          title: 'CSIS3724',
+          startTime: '09:10:00',
+          endTime: '10:00:00',
+          daysOfWeek: [ '4' ],
+          color: '#FFAC33',
+          textColor:'#000000',
+          backgroundColor: '#FFAC33',
+          description: 'Software Engineering',
+          venue: 'Winkie Direko 144'
+				},
+        {
+          title: 'CSIS3744',
+          startTime: '10:10:00',
+          endTime: '11:00:00',
+          daysOfWeek: [ '1' ],
+          color: '#8AFF29',
+          textColor:'#000000',
+          backgroundColor: '#8AFF29',
+          description: 'Computer Networks',
+          venue: 'Psychology 1'
+				},
+        {
+          title: 'CSIS3744',
+          startTime: '17:10:00',
+          endTime: '18:00:00',
+          daysOfWeek: [ '2' ],
+          color: '#8AFF29',
+          textColor:'#000000',
+          backgroundColor: '#8AFF29',
+          description: 'Computer Networks',
+          venue: 'Flippie Groenewoud 378'
+				},
+        {
+          title: 'CSIS3744',
+          startTime: '17:10:00',
+          endTime: '18:00:00',
+          daysOfWeek: [ '4' ],
+          color: '#8AFF29',
+          textColor:'#000000',
+          backgroundColor: '#8AFF29',
+          description: 'Computer Networks',
+          venue: 'Agricultural Building 1'
+				},
+        {
+          title: 'MATM3724',
+          startTime: '12:10:00',
+          endTime: '13:00:00',
+          daysOfWeek: [ '1' ],
+          color: '#29FFAB',
+          textColor:'#000000',
+          backgroundColor: '#29FFAB',
+          description: 'Real Analysis',
+          venue: 'Maths & Science Building 114'
+				},
+        {
+          title: 'MATM3724',
+          startTime: '13:10:00',
+          endTime: '14:00:00',
+          daysOfWeek: [ '4' ],
+          color: '#29FFAB',
+          textColor:'#000000',
+          backgroundColor: '#29FFAB',
+          description: 'Real Analysis',
+          venue: 'Maths & Science Building 114'
+				},
+        {
+          title: 'MATM3724',
+          startTime: '16:10:00',
+          endTime: '18:00:00',
+          daysOfWeek: [ '1' ],
+          color: '#29FFAB',
+          textColor:'#000000',
+          backgroundColor: '#29FFAB',
+          description: 'Real Analysis',
+          venue: 'Maths & Science Building 113'
+				},
+        {
+          title: 'MATA3784',
+          startTime: '15:10:00',
+          endTime: '17:00:00',
+          daysOfWeek: [ '3' ],
+          color: '#DF29FF',
+          textColor:'#000000',
+          backgroundColor: '#DF29FF',
+          description: 'Dynamical Systems',
+          venue: 'Maths & Science Building 226'
+				},
+        {
+          title: 'MATA3784',
+          startTime: '09:10:00',
+          endTime: '10:00:00',
+          daysOfWeek: [ '2' ],
+          color: '#DF29FF',
+          textColor:'#000000',
+          backgroundColor: '#DF29FF',
+          description: 'Dynamical Systems',
+          venue: 'Flippie Groenewoud 376'
+				},
+        {
+          title: 'MATA3784',
+          startTime: '11:10:00',
+          endTime: '12:00:00',
+          daysOfWeek: [ '4' ],
+          color: '#DF29FF',
+          textColor:'#000000',
+          backgroundColor: '#DF29FF',
+          description: 'Dynamical Systems',
+          venue: 'Maths & Science Building 226'
+				},
+        
+        
+			
+			]
     });
+
     calendar.render();
   });
 
@@ -294,7 +431,7 @@ document.addEventListener('DOMContentLoaded', function() {
             <li class="nav-item dropdown no-arrow">
               <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">Kenneth Wright</span>
-                <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
+                <i class="fas fa-user-circle" style="font-size:30px;"></i>
               </a>
               <!-- Dropdown - User Information -->
               <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -334,8 +471,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
           <div id='calendar'></div>
 
-          NIST Telephone Time-of-Day Service 
-          <a href="tel:+1-303-499-7111">+1 (303) 499-7111</a>
+         
           
 
         </div>
@@ -348,7 +484,7 @@ document.addEventListener('DOMContentLoaded', function() {
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">
-            <span>Copyright &copy; SUFS 2019</span>
+            <span>Copyright &copy; UFS 2019</span>
           </div>
         </div>
       </footer>
@@ -365,8 +501,29 @@ document.addEventListener('DOMContentLoaded', function() {
     <i class="fas fa-angle-up"></i>
   </a>
 
-  <!-- Logout Modal-->
-  <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  
+
+  <!-- Event Modal-->
+  <div class="modal fade" id="eventModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel"></h5>
+            <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body" id="mbody"></div>
+          <div class="modal-footer">
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+ <!-- Logout Modal-->
+ <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -378,7 +535,7 @@ document.addEventListener('DOMContentLoaded', function() {
         <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
         <div class="modal-footer">
           <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-          <a class="btn btn-primary" href="login.html">Logout</a>
+          <a class="btn btn-primary" href="index.html">Logout</a>
         </div>
       </div>
     </div>
@@ -400,6 +557,7 @@ document.addEventListener('DOMContentLoaded', function() {
   <!-- Page level custom scripts -->
   <script src="js/demo/chart-area-demo.js"></script>
   <script src="js/demo/chart-pie-demo.js"></script>
+  
 
 </body>
 
